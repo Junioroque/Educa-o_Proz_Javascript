@@ -22,22 +22,21 @@ const arrayPostagens = [
 //InnerText InnerHTML
 //const article = document.querySelector("article")
 //criar o elemento
-const article = document.createElement('article')
-const article2 = document.createElement('article');
-//Adiciona elemento na DOM
-article.innerHTML = ` 
-<h3>${arrayPostagens[1].titulo}</h3>
-<p class="subtitulo">${arrayPostagens[1].subtitulo}</p>
-<div class="data">${arrayPostagens[1].data}</div>
-<p>${arrayPostagens[1].texto}</p>`
 
-article2.innerHTML = ` 
-<h3>${arrayPostagens[2].titulo}</h3>
-<p class="subtitulo">${arrayPostagens[2].subtitulo}</p>
-<div class="data">${arrayPostagens[2].data}</div>
-<p>${arrayPostagens[2].texto}</p>`
 
 //Adiciona elemento na DOM
+for(let i = 1; i < arrayPostagens.length; i++) {
+  const article = document.createElement('article')
+
+  article.innerHTML = ` 
+  <h3>${arrayPostagens[i].titulo}</h3>
+  <p class="subtitulo">${arrayPostagens[i].subtitulo}</p>
+  <div class="data">${arrayPostagens[i].data}</div>
+  <p>${arrayPostagens[i].texto}</p>`
+
+  //Adiciona elemento na DOM
 const main = document.querySelector("main")
 main.appendChild(article)
-main.appendChild(article2)
+
+}
+
