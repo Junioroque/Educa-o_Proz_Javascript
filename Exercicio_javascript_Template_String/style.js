@@ -8,4 +8,4 @@ function calcular(num1, num2){
         `)   
 }
  
-calcular(10,3)
+calcular(10,2)
