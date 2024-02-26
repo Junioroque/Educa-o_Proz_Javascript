@@ -7,7 +7,6 @@ let subtotalInfo = {
 };
 
 
-
 // ------ VARIAVEIS------------ //
 
 let btnAddProduto01 = document.querySelector("#btn-adicionar-produto-01")
@@ -15,11 +14,20 @@ let btnSubtrair = document.querySelector("#btn-subtrair-produto-01")
 let quantidadeProduto01 = document.querySelector("#quantidade-produto-01")
 let valorProduto01 = 11.66
 
-
 // ------ FUNÇÕES -------------- //
 function atualizarSubtotal() {
-  quantidadeSubtotal.innerText = subtotalInfo.quantidade + " itens";
+  quantidadeSubtotal.innerText = subtotalInfo.quantidade + item();
   valorSubtotal.innerText = subtotalInfo.valor.toFixed(2);
+}
+
+function item() {
+   if(subtotalInfo.quantidade == 0){
+    return " item";
+   } else if(subtotalInfo.quantidade == 1) {
+    return " item"
+   }else {
+    return " itens"
+   }
 }
 
 atualizarSubtotal()
